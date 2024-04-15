@@ -1,0 +1,227 @@
+nav{
+  text-align: right;
+  }
+
+p {
+    font-size: 20px;
+    color: #060c25;
+    background-color: transparent;
+    border-radius:0.5rem;
+    overflow:hidden;
+    background:var(--white);
+    backdrop-filter:blur(0.5rem);
+    max-width: 1200px;
+    margin: 10 rem auto;
+    box-shadow: var(--box-shadow);
+  }
+  
+  section {
+  background-color: transparent;
+  border-radius:0.5rem;
+  overflow:hidden;
+  background:var(--white);
+  backdrop-filter:blur(0.5rem);
+  max-width: 1200px;
+  margin-left: 150px;
+  box-shadow: var(--box-shadow);
+  }
+
+  a{
+    text-decoration: none ;
+  }
+
+  .header{
+    background-color: rgba(36, 63, 151, 0.936);
+    background-size:cover;
+  }
+  .text h1{
+    font-family: Arial, sans-serif;
+    color:rgba(243, 243, 248, 0.978);
+    text-align: center;
+    font-size: 50px;
+  }
+  .text h2{
+    font-family: Arial, sans-serif;
+    color:rgba(29, 84, 146, 0.942);
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .btn{
+  background-color: #25a2d0;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  }
+
+  body{
+    background-image: url("images/background.jpg");
+    background-position: center;
+    background-size:cover;
+  }
+  
+  .swipper-wrapper{
+    display:flex;
+    flex-wrap: wrap;
+  }
+  .services .slide{
+    height:25rem;
+    overflow:hidden;
+    position:relative;
+    user-select:none;
+    margin-bottom:4rem;
+    width:15rem;
+    column-gap: 2.5rem;
+  }
+  .services .slide img{
+    height:100%;
+    width:100%;
+    object-fit:cover;
+    transition:0.2s linear;
+  }
+  .services .slide:hover img{
+    transform:scale(1.1)
+  }
+  .services .slide .content{
+    position:absolute;
+    bottom:0; left:0; right:0;
+    background:var(--transparent-white);
+    backdrop-filter:blur(2rem);
+    padding:1rem;
+    text-align:center;
+    transition: 0.2s linear;
+    transform: translateY(calc(100% - 6.5rem));
+  }
+  .services .slide:hover .content{
+    transform: translateY(0);
+  }
+  .services .slide .content h3{
+    font-size:1.5rem;
+    color:rgb(23, 92, 111);
+    text-transform:uppercase;
+  }
+  .services .slide .content p{
+    font-size:20px;
+    color:var(--black);
+    padding:2rem 0;
+  }
+
+  .footer{
+    background-color: rgba(4, 79, 191, 0.186);
+  }
+  .footer .box-container{
+    display:flex;
+    flex-wrap: wrap;
+    column-gap: 2.5rem;
+  }
+  .footer .box-container .box h3{
+    color:rgb(16, 48, 117);
+    font-size:2rem;
+    text-transform: uppercase;
+    padding:1rem 0;
+  }
+  .footer .box-container .box a{
+    display:block;
+    font-size:1.5rem;
+    color: var(--black);
+    padding:1rem 0;
+  }
+  .footer .box-container .box a i{
+    color: var(--pink);
+    padding-right:0.5rem;
+    transition:0.2s linear;
+  }
+  .footer .box-container .box a:hover i{
+    padding-right:2rem;
+  }
+  .footer .credit{
+    text-align: center;
+    margin-top:2rem;
+    padding-top:2rem;
+    border-top: var(--black);
+    color: var(--black);
+  }
+  .footer .credit{
+    color: var(--pink);
+  }
+ #Kandian{
+  display:flex;
+ }
+
+ .contact form{
+  padding:2rem;
+  box-shadow: var(--box-shadow);
+  border-radius:0.5rem;
+  background: var(--transparent-white);
+ }
+
+ .contact form .flex{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1rem;
+ }
+
+ .contact form .flex .inputBox{
+flex:1 1 41rem;
+color:white;
+ }
+
+ .contact form .flex .inputBox span{
+  display: block;
+  margin-bottom: 1rem;
+  font-size:2rem;
+  color: var(--black);
+ }
+
+ .contact form .flex .inputBox input,
+ .contact form .flex .inputBox textarea,
+ .contact form .flex .inputBox select{
+  width: 80%;
+  padding: 1.2rem 1.4rem;
+  border: var(--border);
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+ }
+ .contact form .btn{
+  margin-top:2rem;
+display: block;
+width: 80%;
+ }
+
+ .banquet form{
+  padding:2rem;
+  box-shadow: var(--box-shadow);
+  border-radius:0.5rem;
+  background: var(--transparent-white);
+  width: 80%;
+  border: var(--border);
+  font-size: 1.6rem;
+ }
+ .package li{
+  padding-bottom:0.5rem;
+  font-size:20px;
+ }
+ .package h1{
+  font-size:30px;
+  
+ }
+ .contact{
+  background-image:url("images/about_1.jpg");
+ }
+ .contact form{
+  background-color: transparent;
+  backdrop-filter:blur(0.3rem);
+  box-shadow: var(--box-shadow);
+ }
+
+ #iframe iframe{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

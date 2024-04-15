@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Costumes</title>
+    
+    <link rel="stylesheet" href="https://swiperjs.com/swiper-api#pagination.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            font-size: 20px;
+            background-color: rgba(233, 192, 143, 0.252);
+        }
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            background-color: #6e9fe8d2;
+            font-size: 30px;
+            color: blue;
+        }
+    </style>
+    </head>
+
+    <body>
+
+
+
+        <section class="header">
+            <img src="images/logo.jpg" width="50px" height="50px">
+            <b style="color:white;font-size:30px;"><i>SHESHARYO</i></b><br>
+            <b style="color:white;font-size:20px"><i>Wedding Planning</i></b>
+                <nav class="navbar" style="font-size:20px;text-align:right">
+                    <a style="color:rgb(226, 221, 221)" href="Shesharyo.html"><b>Home&emsp;</b></a>
+                    <a style="color:rgb(223, 217, 217)" href="About.html"><b>About&emsp;</b></a>
+                    <a style="color:rgb(223, 217, 217)" href="Gallery.html"><b>Gallery&emsp;</b></a>
+                    <a style="color:rgb(227, 220, 220)" href="Contact.html"><b>Contact&emsp;</b></a>
+                </nav>
+            </section>
+
+            <section class="banquet">
+            <form action="Hotel.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br><br>
+
+                <div class="inputBox">
+                    <span>Choose district you want to find a hotel : </span>
+                    <select name="town" id="town">
+                        <option value="Galle">Galle</option>
+                        <option value="Colombo">Colombo</option>
+                        <option value="Nuwaraeliya">Nuwaraeliya</option>
+                        <option value="Kandy">Kandy</option>
+                        <option value="Anuradhapura">Anuradhapura</option>
+                    </select>
+                </div>
+                
+                <label for="checkin">Wedding Date:</label>
+                <input type="date" id="checkin" name="checkin"><br><br>
+                
+                <label for="checkout">Homecoming Date:</label>
+                <input type="date" id="checkout" name="checkout"><br><br>
+                
+                <input type="submit" value="Submit" class="btn">
+            </form> 
+        </section>
+
+        <br><br>
+
+<section>
+            
+            <h2>Hotel Details</h2>
+            <div class="inputBox">
+                <button class="btn" onclick="showPrompt()">Choose Town</button>
+                <p>Available: (Colombo/Galle/Nuwaraeliya/Anuradhapura/Kandy)</p>
+                </div>
+            <table id="hotelTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Rating</th>
+                        <th style="font-size:30px;">No of chairs provided </th>
+                        <th>Images</th>
+                    </tr>
+                </thead>
+                <b>
+                <tbody id="hotelData">
+                </tbody>
+                </b>
+            </table>
+        
+            <script>
+                function showPrompt() {
+                    var town = prompt("Enter the town name:");
+                    if (town) {
+                        getHotelDetails(town);
+                    }
+                }
+        
+                function getHotelDetails(town) {
+                    var hotels = [
+                        { name: "Hotel Yeshara(Tel:0112345345)", location: "Colombo", rating: 3.5,chairs:500, image:"images/banquet_1.jpg" },
+                        { name: "Hotel Sisira(Tel:09122367367)", location: "Galle", rating: 3.8,chairs:700 , image:"images/banquet_2.jpg"},
+                        { name: "Hotel Sriyani(Tel:0342345345)", location: "Kandy", rating: 4.2,chairs:800, image:"images/banquet_3.jpg" },
+                        { name: "Hotel Gamage(Tel:0112678945)", location: "Colombo", rating: 4.5,chairs:900 , image:"images/banquet_4.jpg"},
+                        { name: "Hotel Bhagya(Tel:0912214567)", location: "Galle", rating: 3.8,chairs:450 , image:"images/banquet_1.jpg"},
+                        { name: "Hotel Shehara(Tel:0346789345)", location: "Anuradhapura", rating: 4.2,chairs:800 ,image:"images/banquet_2.jpg"},
+                        { name: "Hotel Jayani(Tel:0772345345)", location: "Nuwaraeliya", rating: 4.5,chairs:750 , image:"images/banquet_3.jpg"},
+                        { name: "Hotel Yenuli(Tel:0722347895)", location: "Anuradhapura", rating: 3.8,chairs:700 ,image:"images/banquet_4.jpg"},
+                        { name: "Hotel Lakitha(Tel:0782368945)", location: "Kandy", rating: 4.2,chairs:6500 , image:"images/banquet_2.jpg"},
+                        
+                    ];
+        
+                    
+                    var tableBody = document.getElementById("hotelData");
+                    tableBody.innerHTML = "";
+
+                    var townHotels=hotels.filter(function(hotel){
+                        return hotel.location===town;
+                    
+                    });
+
+        
+                    // Populate table with hotel details
+                    townHotels.forEach(function(hotel) {
+                        var row = tableBody.insertRow();
+                        var nameCell = row.insertCell(0);
+                        var locationCell = row.insertCell(1);
+                        var ratingCell = row.insertCell(2);
+                        var chairCell = row.insertCell(3);
+                        var imageCell = row.insertCell(4);
+        
+                        nameCell.textContent = hotel.name;
+                        locationCell.textContent = hotel.location;
+                        ratingCell.textContent = hotel.rating;
+                        chairCell.textContent = hotel.chairs;
+
+                        var img=document.createElement('img');
+                        img.src=hotel.image;
+                        img.alt=hotel.name+"image";
+                        img.width= 200;
+
+                        imageCell.appendChild(img);
+
+                    });
+                }
+            </script>
+            </section>
+</body>
+</html>
+
+

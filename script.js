@@ -1,0 +1,20 @@
+var swiper=new swiper(".service-slider",{
+    loop:true,
+    spaceBetween:20,
+    grabCursor:true,
+    pagination:{
+        el:".swiper-pagination",
+        clickable:true,
+    },
+    breakpoints:{
+        450:{
+            slidesPreView:1,
+        },
+        768:{
+            slidesPreView:2, 
+        },
+        1000:{
+            slidesPreView:3,
+        },
+    },
+});
